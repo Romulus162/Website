@@ -1,29 +1,90 @@
 html {
   /*font-size: 10px;*/
-  font-family: "Lato", "Helvetica", "Arial", sans-serif; 
+  font-family: "Lato", "Helvetica", "Arial", sans-serif;
   background: #6293d2;
 }
 
 header {
   border: 3px double;
-  padding: 15px;
-  margin: 0 auto;
-  max-width: 70%;
   background: #b3b3b3;
+  box-sizing: border-box;
+}
+
+.flex-break {
+  flex-basis: 100%;
+  height: 0;
 }
 
 .flex-container {
   display: flex;
   gap: 2px 4px;
+  flex-wrap: wrap;
 }
 
 .content-in-width {
-  max-width: 80%;
   margin: auto;
 }
 
-ul li {
-  display: inline;
+ul {
+  list-style: none;
+  line-height: 2em;
+}
+
+.tree {
+  padding-left: 0.5rem;
+}
+
+.tree ul li {
+  position:relative;
+}
+
+ul li::before {
+  position:absolute;
+  left:-10px;
+  top:0px;
+  border-left:2px solid purple;
+  border-bottom:2px solid blue;
+  content:"";
+  width: 8px;
+  height: 1em;
+}
+
+ul li::after {
+  position:absolute;
+  left:-10px;
+  bottom:0px;
+  border-left:2px solid purple;
+  content:"";
+  width: 8px;
+  height: 100%;
+}
+
+ul li:last-child::after{
+  display:none;
+}
+
+.tree summary {
+  cursor: pointer;
+}
+
+.tree summary::marker{
+  display:none;
+  content: none;
+}
+
+.tree summary::-webkit-details-marker {
+  display: none;
+}
+
+.tree ul summary::before {
+  position: absolute;
+  left: -30px;
+  top: .3em;
+  content: "";
+  background: orange;
+  display: block;
+  width: 15px;
+  height: 15px;
 }
 
 main {
@@ -51,7 +112,6 @@ aside {
 }
 
 nav {
-  padding: 15px;
   border: 3px double;
   flex: 1;
   background: #b3b3b3;
