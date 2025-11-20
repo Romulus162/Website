@@ -19,7 +19,7 @@
   <div class="content-in-width flex-container">
     <header>
       <ul>
-        <li>|| email: info@romanbadiere.com ||</li>
+        <li>email: info@romanbadiere.com</li>
         <li>YT: tbt</li>
       </ul>
     </header>
@@ -113,8 +113,137 @@
     </nav>
     <main>
       <article>
-        <h1>Too lazy to make this page right now... 0_0</h1>
-      </article>
+        <h1>My Raspberry Pi 4B Setup</h1>
+        <section>
+          <h2>Introduction</h2>
+          <p>
+            Everyone who works with computers should have a raspberry pi for
+            multiple reasons. One of which is most important to myself is the
+            fact they are ARM64 based cpu architecture. Not to mention these
+            days they come out with 8GB of ram, which quite honestly is more
+            than enough. I'm not trying to market for raspberry pi here, I
+            genuinely love the fact I can buy a cheap computer with zero
+            pre-installed firmware.
+          </p>
+          <p>
+            Of course, having a lot of ram, a strong GPU, and strong CPU are
+            all really nice conveniences. However this has allowed a lot of
+            software developers in todays world to rely on such
+            conveniences... This has brought about a great shame. It doesn't
+            have to be a Pi, owning a "limited" computer by todays standards,
+            working with it, will make you a better computer operator.
+          </p>
+        </section>
+        <section>
+          <h2>Basic Setup</h2>
+          <h4>Hardware</h4>
+          <p>
+            In regards to hardware, Its mostly all just what you would find in
+            the basic Canna kit for a raspberry Pi4B model. The "Upgrades",
+            I've done in this area would be a better aluminum cooling case,
+            and an external SSD drive using one of the 3.0 USB ports.
+          </p>
+          <p>
+            I do have a UPS (Uninterupted Power Supply) integrated, however
+            there is a lot that can be done via the software to make this a
+            much nicer setup, and hence will be briefly mentioned here.
+          </p>
+          <h4>Firmware</h4>
+          <p>
+            As a quick recap in case you don't know, firmware is essentially
+            what sits between your motherboard (hardware), and your operating
+            system (software). Which makes itself the first software that will
+            be ran after you turn on your machine via the power button. For
+            the Pi, at this point of the process, I just have a simple Debian
+            Distribution of sorts that was found via the official raspberry pi
+            repo. Maybe I could "efficient max" here and put in a gentoo
+            version, or even just de-bloat maybe what I think is bloat. But at
+            a certain point, I'm just happy to have something non-proprietory
+            as my firmware which sadly is very un-common today.
+          </p>
+        </section>
+        <section>
+          <h4>OS</h4>
+          <p>
+            So this is the part where it starts to become fun, I must
+            emphasize my configuration isn't the gentoo-on-rpi-64bit by
+            Sakaki, nor the community forked version. <br />Initially these
+            options were interesting to me, however their last updates were
+            years ago and some of the configurations arn't as I'd like them
+            myself. In such situations, its typically easier to just set this
+            up yourself, and there is good enough documentation on the gentoo
+            wiki for this.
+          </p>
+          <p>
+            So if it isn't obvioius, the OS I've chosen for this machine is
+            Gentoo. Paired with the earlier mentioned SSD and cooling case,
+            the fact I compile everything from source is not a problem at all.
+            I've migrated all the read write process onto the SSD, with the SD
+            handling the initial boot up process which drastically reduces the
+            wear and tear on the SD. At the moment of writing this, I have not
+            written my reason for using Gentoo and loving Gentoo. If you've
+            read up until this point, and have a basic understanding of
+            Gentoo, not much needs to be said at this point in time.
+          </p>
+        </section>
+        <section>
+          <h4>Systems</h4>
+          <p>
+            So finally the part that starts to make this setup be useful.
+            Whats nice about gentoo is that I only have what I use. This means
+            that for example, because I don't need a desktop environment I
+            simply do not have one installed. I do however have Tmux, and Nvim
+            installed. You could argue that this is unncessary because TTY is
+            around, and nano exist, although I think I may have had to install
+            nano funnily enough. Regardless, these are my conveniences and
+            sometimes its nice to have nice things okay, jeez. Nvim in
+            particular is nice because thats my current editor I've been using
+            and learning. Eventually I'd love to learn ARM64 here, and Neo-Vim
+            will make that a very enjoyable experience.
+          </p>
+          <p>
+            I have a NAS (Network-Attached-Storage) via the samba software
+            which uses the SMB (Server Message Block) protocol. This is quite
+            honestly very convenient, as I hold my music database here which I
+            can then access on other machines connected to my network and play
+            them via MPD. However here is a more real world scenario I've had
+            happen every day I have a java class. I would be working on my
+            main PC, and simply needing to transfer my Java homework, I just
+            drag and drop the folder from one computer, the pi, and then
+            finally on my laptop I drag and drop onto my local storage
+            somewhere, ALL THROUGH A UI FILESYSTEM INTERFACE. So yeah super
+            convenient, and it all takes me like I don't know twenty seconds
+            or so. Genuinely a really nice convenience.
+          </p>
+          <p>
+            I mentioned it earlier, but I have a UPS system setup, the
+            software that enhances the dumb battery and makes it smart is the
+            very funnily named NUT system. The guide on the official gentoo
+            wiki is honestly perfect and that's what I used. This is really
+            nice to have because say power goes out, my Pi might be compiling
+            something important or there may be un-saved buffers. Really not
+            the best thing to have happen to memory. With NUT, I'm able to
+            configure it to safely self shut-down itself if it detects power
+            has been out for say five minuets.
+          </p>
+          <p>
+            Quite honestly, there is a lot more I could do here, and it
+            wouldn't be so difficult to setup... However I'm in school, and
+            can only afford to setup one of these systems a weekend or so.
+            Rome wasn't built in one day. At the moment when I need to update
+            my Pi I do this manually, however there is a Daemon (system) that
+            I plan to configure known as Cron. This essentially is an
+            automatic-updater, where I can also have it email me once it does
+            its job of all changes/complaints on what's going on. Paired with
+            the fact this is all in Gentoo, I could litterally have the long
+            compile process going on say when I'm away from the computer. If
+            anything goes wrong, well NUT is there to save the day with a safe
+            shutdown procedure in case power goes out. The point is, that
+            having a setup like this, you can come up with lots of daily
+            conveniences that just makes your daily work flow more pleasant.
+          </p>
+        </section>
+        < </article>
     </main>
     <aside>
       <section>
@@ -123,4 +252,5 @@
     </aside>
   </div>
 </body>
+
 </html>

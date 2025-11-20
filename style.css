@@ -91,6 +91,10 @@ ul li:last-child::after{
   color: green;
 }
 
+p {
+  line-height: 1.5;
+}
+
 main {
   margin: 0 auto;
   border: 3px double;
