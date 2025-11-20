@@ -77,14 +77,18 @@ ul li:last-child::after{
 }
 
 .tree ul summary::before {
+  content: ">";
   position: absolute;
   left: -30px;
-  top: .3em;
-  content: "";
-  background: orange;
-  display: block;
-  width: 15px;
-  height: 15px;
+  font-weight: bold;
+  transform: rotate(0deg);
+  color: blueviolet;
+  font-size: 1.5em;
+}
+
+.tree ul details[open] > summary::before {
+  transform: rotate(90deg);
+  color: green;
 }
 
 main {

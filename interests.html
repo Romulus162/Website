@@ -1,71 +1,141 @@
 <!doctype html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
 
-    <title>Roman Badiere</title>
-    <link rel="icon" href="Soundwave.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
 
-  <body>
-    <div class="content-in-width flex-container">
-      <header>
-        <ul>
-          <li>|| email: info@romanbadiere.com ||</li>
-          <li>YT: tbt</li>
-        </ul>
-      </header>
-      <div class="flex-break"></div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="interests.html">Interests</a></li>
-          <li><a href="resume.html">Useless resume</a></li>
-        </ul>
-      </nav>
+  <title>Roman Badiere</title>
+  <link rel="icon" href="Soundwave.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-      <main>
-        <article>
-          <h1>Anime that I like.</h1>
-          <section>
-            <h3>Wangan Midnight</h3>
-            <p>
-              An old cult classic not known by many, honestly one of my top
-              three.<br />
-            </p>
-          </section>
-          <section>
-            <h3>Ghost Stories (Dub)</h3>
-            <p>
-              I like this anime because I think its genuinely hilarious, and
-              very laidback. It has to be the dub because it is very much a
-              different show to what the sub was.
-            </p>
-          </section>
-          <section>
-            <h3>Serial Experiments Lain</h3>
-            <p>
-              Of course I was going to say I like Serial Experiments Lain,
-              nothing needs to be said.
-            </p>
-          </section>
-        </article>
-      </main>
-      <aside>
+<body>
+  <div class="content-in-width flex-container">
+    <header>
+      <ul>
+        <li>|| email: info@romanbadiere.com ||</li>
+        <li>YT: tbt</li>
+      </ul>
+    </header>
+    <div class="flex-break"></div>
+    <nav>
+      <ul class="tree">
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <details close>
+              <summary><a href="projects.html">Projects</a></summary>
+            <ul>
+              <li>
+                <details close>
+                  <summary>Programming</summary>
+                  <ul>
+                    <li>X86-64</li>
+                    <li>ARM64</li>
+                    <li>Rust</li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details close>
+                  <summary>Networking</summary>
+                  <ul>
+                    <li>GenPi-4B</li>
+                    <li>Router</li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details close>
+                  <summary>OS</summary>
+                  <ul>
+                    <li>Approach</li>
+                    <li>Gentoo</li>
+                    <li>Mint</li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details close>
+                  <summary>Bevy</summary>
+                  <ul>
+                    <li>ReadMe</li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <details open>
+            <summary>
+                Interests
+            </summary>
+            <ul>
+              <li>
+                <details close>
+                  <summary>Anime</summary>
+                  <ul>
+                    <li>Wangan Midnight</li>
+                    <li>Ghost Stories (Dub)</li>
+                    <li>Serial Experiments Laine</li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details close>
+                  <summary>Books</summary>
+                  <ul>
+                    <li>Jurassic Park</li>
+                    <li>Papion</li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="resume.html">Useless resume</a></li>
+      </ul>
+    </nav>
+    <main>
+      <article>
+        <h1>Anime that I like.</h1>
         <section>
-          <h3>RELATED</h3>
+          <h3>Wangan Midnight</h3>
+          <p>
+            An old cult classic not known by many, honestly one of my top
+            three.<br />
+          </p>
         </section>
-      </aside>
-    </div>
-    <!-- Footer that could be used across all the pages, not sure if i want this yet but we'll see-->
-  </body>
+        <section>
+          <h3>Ghost Stories (Dub)</h3>
+          <p>
+            I like this anime because I think its genuinely hilarious, and
+            very laidback. It has to be the dub because it is very much a
+            different show to what the sub was.
+          </p>
+        </section>
+        <section>
+          <h3>Serial Experiments Lain</h3>
+          <p>
+            Of course I was going to say I like Serial Experiments Lain,
+            nothing needs to be said.
+          </p>
+        </section>
+      </article>
+    </main>
+    <aside>
+      <section>
+        <h3>RELATED</h3>
+      </section>
+    </aside>
+  </div>
+  <!-- Footer that could be used across all the pages, not sure if i want this yet but we'll see-->
+</body>
+
 </html>
