@@ -1,90 +1,207 @@
 <!doctype html>
 <html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
+    <title>Roman Badiere</title>
+    <link rel="icon" href="../../Soundwave.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+  </head>
 
-  <title>Roman Badiere</title>
-  <link rel="icon" href="../../Soundwave.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="../../style.css" />
-</head>
-
-<body>
-  <div class="content-in-width flex-container">
-    <header>
-      <ul>
-        <li>email: info@romanbadiere.com</li>
-        <li>YT: tbt</li>
-      </ul>
-    </header>
-    <div class="flex-break"></div>
-    <nav>
-      <ul class="tree">
-        <li><a href="../../index.html">Home</a></li>
-        <li>
-          <details open>
-            <summary>Projects</summary>
-            <ul>
-              <li>
-                <details>
-                  <summary>Programming</summary>
-                  <ul>
-                    <li><a href="../Programming/X86.html">X86</a></li>
-                    <li><a href="../Programming/ARM.html">ARM</a></li>
-                    <li><a href="../Programming/Rust.html">Rust</a></li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <details>
-                  <summary>Networking</summary>
-                  <ul>
-                    <li>
-                      <a href="../Networking/GenPi-4B.html">GenPi-4B</a>
-                    </li>
-                    <li><a href="../Networking/Router.html">Router</a></li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <details>
-                  <summary>OS</summary>
-                  <ul>
-                    <li><a href="../OS/Mint.html">Mint</a></li>
-                    <li><a href="../OS/Gentoo.html">Gentoo</a></li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <details open>
-                  <summary>Bevy</summary>
-                  <ul>
-                    <li>ReadMe</li>
-                  </ul>
-                </details>
-              </li>
-            </ul>
-          </details>
-        </li>
-      </ul>
-    </nav>
-    <main>
-      <article>
-        <h1>Too lazy to make this page right now... 0_0</h1>
-      </article>
-    </main>
-    <aside>
-      <section>
-        <h3>RELATED</h3>
-      </section>
-    </aside>
-  </div>
-</body>
-
+  <body>
+    <div class="content-in-width flex-container">
+      <header>
+        <ul>
+          <li>email: info@romanbadiere.com</li>
+          <li>YT: tbt</li>
+        </ul>
+      </header>
+      <div class="flex-break"></div>
+      <nav>
+        <ul class="tree">
+          <li><a href="../../index.html">Home</a></li>
+          <li>
+            <details open>
+              <summary>Projects</summary>
+              <ul>
+                <li>
+                  <details>
+                    <summary>Programming</summary>
+                    <ul>
+                      <li><a href="../Programming/X86.html">X86</a></li>
+                      <li><a href="../Programming/ARM.html">ARM</a></li>
+                      <li><a href="../Programming/Rust.html">Rust</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>Networking</summary>
+                    <ul>
+                      <li>
+                        <a href="../Networking/GenPi-4B.html">GenPi-4B</a>
+                      </li>
+                      <li><a href="../Networking/Router.html">Router</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>OS</summary>
+                    <ul>
+                      <li><a href="../OS/Mint.html">Mint</a></li>
+                      <li><a href="../OS/Gentoo.html">Gentoo</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details open>
+                    <summary>Bevy</summary>
+                    <ul>
+                      <li>ReadMe</li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <article>
+          <section>
+            <h1>Bevy Engine, and its ecosystem.</h1>
+            <p>
+              Initially this will be an "article/blog" of sorts. However in the
+              near future, I would like to showcase some guides/examples on how
+              you could get some basic tools and maybe a basic project going.
+            </p>
+          </section>
+          <section>
+            <h3>Todays popular game engines.</h3>
+            <p>
+              Today if you are interested in game developoment, and your new to
+              the field, typically you'll find yourself with two maybe three
+              "popular options". For indie development, you will be drowned out
+              by everyone talking about popular options such as Unity, Unreal,
+              and maybe the accepted Godot option. To be quite blunt, I'm going
+              to talk about why I dislike these options and it will probably
+              come off as rude if you've invested a lot of effort into learning
+              these tools, so understand that is not the intention. This will
+              make more sense when I talk about why I like Bevy.
+            </p>
+            <p>
+              In short, I do not like Unity nor Unreal. They have both
+              traumatised me from both the developer side and gamer side of
+              things. None of the developer skills marketed as "easy" translate
+              outside of Unity or Unreal. Granted I don't have much time
+              invested into these engines, but frankely, as soon as I saw all
+              the walls of UI buttons, it quickly became overwhelming and
+              boring. Game development is a form of expression/art, and if your
+              not having fun during the process, what are you doing. Granted if
+              it actually works for you, and you enjoy it, I'm not here to tell
+              you how to live your life. Yet this isn't exactly an uncommon
+              story, Blender is a very popular tool for 3D projects, try
+              learning that as a beginner and again you'll become very
+              overwhelmed. This has lead a lot of artists to alternatives that
+              are simply easier to navigate.
+            </p>
+            <p>
+              I don't know about Unreal, but Unity is a very suspicious software
+              and I do not trust it at all. I had an experience during my
+              installation and un-install and I refuse to ever try it again.
+            </p>
+            <p>
+              <b
+                >This Next section will be my old gamer rage coming out
+                (toned-down).</b
+              >
+              <br />
+              From the gamer perspective, I have become very frusturated with
+              games made from Unity and Unreal. I don't really play video games
+              that much anymore for plently of reasons, one of which being I
+              genuienly dislike modern games. I don't mean just the "Triple A"
+              games, but also the indie ones, so many just put very little
+              effort into optimization or just genuine creativity. I blame a lot
+              of this on Unity and Unreal, for making the game-development
+              process "simple". You've sacrificed the soul of your game, for a
+              simple cheap "solution". Quite commonly whenever I express how a
+              game is terribly made, a very cringe argument "get a better
+              computer" comes up. Despite what many may think, a hardware
+              solution is NOT a solution to a software problem. Expecting your
+              users to have "good hardware" shows incompetence.
+            </p>
+          </section>
+          <section>
+            <h3>What is Bevy?</h3>
+            <p>
+              So what are you to do? You could make your own game engine which
+              many do and its very commendable. However not everyone has the
+              time or maybe even know-how to do such a project. The next best
+              thing you can do is use someone else's game engine project. That's
+              what Bevy is. Bevy is a second iteration of a game engine written
+              in Rust, initially it was called Amethyst engine, however it was
+              becoming difficult to maintain/build. So the developers scrapped
+              Amethyst took the lessons they learned from there and applied it
+              to Bevy. This was a good and healthy process because now Bevy
+              every year is becoming so much more powerful, and you don't have
+              to go through it!
+            </p>
+            <p>
+              Bevy is open-source, so lets say you don't like some parts of the
+              engine, or you want to add something. Hey awesome that's really
+              easy to do just fork the repository and bam you have full control
+              of everything. Additionally, because of the fact its open-source
+              and designed to be very modular, you actually have a LOT of
+              options. For example Bevy is an engine, but intentially, lets say,
+              minimal. It doesn't come with its own physics engine or graphical
+              user interface. This could be alarming for some, but its actually
+              exactly what you want. In the community the popular physics
+              engines you can use for bevy are Rapier, Avian, and I think one
+              named Thunderbolt? Want a nice dialogue system? A popular
+              community choice is a crate (library/package/repository) called
+              yarn-spinner. Do you actually want/need a UI for de-bugging or
+              development, hey you can actually get one going really quickly
+              with bevy-inspector-egui crate. That's why bevy itself although
+              being a simple "game-engine", is really more of a community driven
+              ecosystem, where so many people help each other out and build out
+              various solutions tailored for the developer, by developers.
+            </p>
+            <p>
+              Another such area, in Bevy the system for building UI is
+              litterally imitating HTML and CSS practice. Yes its not exactly
+              and litterally HTML/CSS, but it imitates it as best it can within
+              Rust, and that's why using Bevy is such a breath of fresh air.
+              Maybe you already understand HTML and CSS ok great then building
+              UI for your game in Bevy will actually not be so difficult for you
+              to pickup. It's the fact that Bevy follows the "Standard practice"
+              which is what makes it so great.
+            </p>
+            <p>
+              Finally Bevy is a ECS or Entity Component System and is written in
+              rust. This means that structurally, its forcing you to make a much
+              more efficient project than traditional Object Orientated
+              Programming structures such as Unity use. This means that even if
+              you aren't the best say programmer, Bevy is already helping you
+              make a better project just by how it works, and the rust compiler
+              a very powerful and sophisticated tool, is very pro-active in
+              helping you out.
+            </p>
+          </section>
+        </article>
+      </main>
+      <aside>
+        <section>
+          <h3>RELATED</h3>
+        </section>
+      </aside>
+    </div>
+  </body>
 </html>
