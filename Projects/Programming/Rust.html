@@ -76,23 +76,187 @@
       </nav>
       <main>
         <article>
-          <h1>Rust performance and memory safety!</h1>
-          <p>
-            Rust is a very nice language to work with, partly because it holds
-            your hand with its really well made compiler. It is designed to be
-            memory safe with its borrow checker system.
-          </p>
-          <h3>My Solutions for the Advent of Code!</h3>
-          <p>
-            In the next couple of days the Advent of Code will start, and I will
-            be posting and discussing my solutions. Hopefully I can stick to
-            this for all the days!
-          </p>
+          <section>
+            <h1>Rust performance and memory safety!</h1>
+            <p>
+              Rust is a very nice language to work with, partly because it holds
+              your hand with its really well made compiler. It is designed to be
+              memory safe with its borrow checker system.
+            </p>
+          </section>
+          <section>
+            <h2>My Solutions for the Advent of Code!</h2>
+            <p>
+              So Advent of code has started, and I have my first days solution
+              below, but as I've just now realized this page will become very
+              messy very quickly. I doubt anyone is really checking out my
+              website on a daily basis, but in the offchance anyone is here
+              during the messy phase of my Advent of code event. This will be a
+              pretty good opportunity to refine my overall website flow. I will
+              probably be spending my next efforts on this page these next
+              couple of weeks and that will just translate to the rest of the
+              website more or less.
+            </p>
+            <h3>Context</h3>
+            <p>
+              So I have a Java test for my school basically three days after
+              Advent of code concludes. This means this fun little event can
+              turn into a liability. So, with that in mind, I am actually
+              un-appologetically using A.I. to just turn off my brain and just
+              come up with a "solution". This is because if I spend the effort
+              to genuinely make a proper solution the proper way, I run the risk
+              of thinking about Rust code during my Java test. That doesn't mean
+              I'm just fully copy and pasting though, it just means I write out
+              what makes sense, and I quickly fall back on AI, because I want to
+              still participate in this event, but I don't want it to get in the
+              way of my Java test. In the same idea, I could be doing this in
+              Java, however the context is "simple" java, so I can't use any
+              external libraries we havn't learned about yet, and we haven't
+              learned many libaries other than some default ones in my class
+              yet.
+            </p>
+            <p>
+              COPE: This isn't actually a bad strategy, its a good mix up in my
+              daily routine. Additionally in the future I intend to just make
+              some YT videos explaining the solution, and I will also be
+              re-writing/making a lot of this website in Polish anyways. So I
+              will be returning to these "solutions", and perhaps maybe even
+              making them better. Although this would be later, past the
+              conclusion of the advent of code event happening this year of
+              2025.
+            </p>
+          </section>
+          <section>
+            <h2>Day 1</h2>
+            <p>
+              Yeah so my html formatter is making it appear goofy, and of course
+              I should apply some css or something to make this more appealing.
+              If you are present during these early stages, you may find it
+              easier to just checkout the code on my github, I linked it in the
+              related part of this page.
+            </p>
+            <h4>Part 1:</h4>
+            <pre><code>
+              fn main() {
+              let input = include_str!("./input1.txt");
+              let test = include_str!("./test.txt");
+              println!("{}", part1(input));
+              }
+
+              fn part1(input: &str) -> u32 {
+              let mut pos: u32 = 50;
+              let mut counter = 0;
+
+              for line in input.lines() {
+              let dir = line.chars().next().unwrap();
+              let num: u32 = line[1..].trim().parse().unwrap();
+
+              let step = num % 100;
+
+              pos = match dir {
+              'L' => (pos + 100 - step) % 100,
+              'R' => (pos + step) % 100,
+              _ => panic!("Invalid first Character"),
+              };
+
+              // println!("Line: {}, pos = {}", line, pos);
+              if pos == 0 {
+              counter += 1;
+              }
+              }
+
+              // println!("Final position = {}", pos);
+              // println!("Total zeros: {}", counter);
+              return counter;
+              }
+
+              #[cfg(test)]
+              mod tests {
+              use super::*;
+
+              #[test]
+              fn test() {
+              let test = include_str!("./test.txt");
+              let result = part1(test);
+              assert_eq!(result, 3);
+              }
+              }
+            </code></pre>
+            <h4>Part 2:</h4>
+            <pre><code>
+              use core::panic;
+
+              fn main() {
+              let input = include_str!("./input1.txt");
+              let test = include_str!("./test.txt");
+              println!("{}", part2(input));
+              }
+
+              fn part2(input: &str) -> u32 {
+              let mut pos: u32 = 50;
+              let mut counter = 0;
+
+              for line in input.lines() {
+              let dir = line.chars().next().unwrap();
+              let steps: u32 = line[1..].trim().parse().unwrap();
+
+              let zeros = match dir {
+              'R' => zeros_right(pos, steps),
+              'L' => zeros_left(pos, steps),
+              _ => panic!("Invalid first character"),
+              };
+              counter += zeros;
+
+              let step_mod = steps % 100;
+              // println!("Line: {}, pos = {}", line, pos);
+              pos = match dir {
+              'R' => (pos + step_mod) % 100,
+              'L' => (pos + 100 - step_mod) % 100,
+              _ => unreachable!(),
+              };
+              }
+
+              // println!("Final position = {}", pos);
+              // println!("Total zeros: {}", counter);
+              return counter;
+              }
+
+              fn zeros_right(pos: u32, steps: u32) -> u32 {
+              let laps = steps / 100;
+              let rem = steps % 100;
+              laps + ((pos + rem) / 100)
+              }
+
+              fn zeros_left(pos: u32, steps: u32) -> u32 {
+              let laps = steps / 100;
+              let rem = steps % 100;
+
+              let extra = if pos > 0 && rem >= pos { 1 } else { 0 };
+              laps + extra
+              }
+
+              #[cfg(test)]
+              mod tests {
+              use super::*;
+
+              #[test]
+              fn test() {
+              let test = include_str!("./test.txt");
+              let result = part2(test);
+              assert_eq!(result, 6);
+              }
+              }
+
+            </code></pre>
+          </section>
         </article>
       </main>
       <aside>
         <section>
           <h3>RELATED</h3>
+          <a href="https://github.com/Romulus162/advent_of_code"
+            >Github Link to my advent of code solutions</a
+          >
         </section>
       </aside>
     </div>
