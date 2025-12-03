@@ -249,6 +249,132 @@
 
             </code></pre>
           </section>
+          <section>
+            <h2>Day 2</h2>
+            <p>
+              Wow, I am already super pissed I have to scroll this far down. I
+              have a really annoying squeaky mouse that's been abused. Bless
+              your soul if you got this far. In the future I will make this crap
+              collapsible or more easily navigatable.
+            </p>
+            <p>
+              Anyways, on the off chance anyone is happening to see this during
+              the event and my page isn't updated to the correct day event. Its
+              because I probably did or have it on my repo, but just didn't
+              update the website. It takes like 30 seconds to push to main, vs
+              like 15-20 minuets to write something out here and not sound like
+              a complete moron.
+            </p>
+            <h4>Part 1:</h4>
+            <pre><code>
+              fn main() {
+              let input = include_str!("./input.txt");
+              let test = include_str!("./test.txt");
+              println!("{}", part1(input));
+              //println!("{}", part1(test));
+              }
+
+              fn part1(input: &str) -> u64 {
+              let mut total_sum: u64 = 0;
+
+              for range_input in input.split(',') {
+              let trimmed = range_input.trim();
+              if trimmed.is_empty() {
+              // println!("{trimmed}");
+              continue;
+              }
+
+              let (start_str, end_str) = trimmed.split_once('-').expect("Range needs a '-'");
+
+              let start: u64 = start_str.parse().expect("Invalid start number");
+              let end: u64 = end_str.parse().expect("Invalid start number");
+
+              for id in start..=end {
+              let id_to_str = id.to_string();
+              let half = id_to_str.len() / 2;
+              let (first, second) = id_to_str.split_at(half);
+              if first == second {
+              total_sum += id;
+              }
+              }
+              }
+              return total_sum;
+              }
+
+              #[cfg(test)]
+              mod tests {
+              use super::*;
+
+              #[test]
+              fn test() {
+              let test = include_str!("./test.txt");
+              let result = part1(test);
+              assert_eq!(result, 1227775554);
+              }
+              }
+            </code></pre>
+            <h4>Part2:</h4>
+            <pre><code>
+              fn main() {
+              let input = include_str!("./input.txt");
+              let test = include_str!("./test.txt");
+              println!("{}", part2(input));
+              //println!("{}", part2(test));
+              }
+
+              fn part2(input: &str) -> u64 {
+              let mut total_sum: u64 = 0;
+
+              for range_input in input.split(',') {
+              let trimmed = range_input.trim();
+              if trimmed.is_empty() {
+              // println!("{trimmed}");
+              continue;
+              }
+
+              let (start_str, end_str) = trimmed.split_once('-').expect("Range needs a '-'");
+
+              let start: u64 = start_str.parse().expect("Invalid start number");
+              let end: u64 = end_str.parse().expect("Invalid start number");
+
+              for id in start..=end {
+              let id_to_str = id.to_string();
+              let len = id_to_str.len();
+
+              'pattern_check: for chunk_len in 1..=len / 2 {
+              if len % chunk_len != 0 {
+              continue;
+              }
+
+              let chunk = &id_to_str[..chunk_len];
+              let mut i = chunk_len;
+
+              while i < len { if &id_to_str[i..i + chunk_len] !=chunk { continue 'pattern_check;
+                    }
+                    i += chunk_len;
+                }
+
+                total_sum += id;
+                break;
+            }
+        }
+    }
+    return total_sum;
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        let test = include_str!("./test.txt");
+        let result = part2(test);
+        assert_eq!(result, 4174379265);
+    }
+}
+</code></pre>
+          </section>
         </article>
       </main>
       <aside>
